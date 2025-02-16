@@ -18,6 +18,35 @@ public class Student {
     this.activated = true;
   }
 
+  // 세터를 사용해서 작업할시 권장하지 않는 이유 - 가독성이 떨어짐
+//  public void setActivated(boolean activated) {
+//    if (activated && this.activated) {
+//      throw new IllegalArgumentException();
+//    }
+//
+//    if (!activated && !this.activated) {
+//      throw new IllegalArgumentException();
+//    }
+//
+//    this.activated = activated;
+//  }
+
+  public void activate() {
+    if (this.activated) {
+      throw new IllegalArgumentException();
+    }
+
+    this.activated = true;
+  }
+
+  public void deactivate() {
+    if (!this.activated) {
+      throw new IllegalArgumentException();
+    }
+
+    this.activated = false;
+  }
+
   public String getName() {
     return name;
   }
